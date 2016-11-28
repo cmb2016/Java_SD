@@ -26,8 +26,8 @@ public class MovieStock extends Stock{
         this.format = format;
     }
 
-    public MovieStock(String name, HashSet<Actor> aList, String genre, String format){
-        super(name);
+    public MovieStock(String name, HashSet<Actor> aList, String genre, Date releaseDate, String format){
+        super(name, releaseDate);
         this.actorList = aList;
         setGenre(genre);
         this.format = format;

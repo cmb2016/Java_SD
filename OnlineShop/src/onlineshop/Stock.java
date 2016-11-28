@@ -24,8 +24,9 @@ public abstract class Stock implements IStock {
     }
 
     //overloaded constructor
-    public Stock(String name){
+    public Stock(String name, Date date){
         this.name = name;
+        this.releaseDate = date;
     }
 
     //Setters & Getters

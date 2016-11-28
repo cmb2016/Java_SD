@@ -16,7 +16,8 @@ public class Tester {
         //Date Constructors
         Date d1 = new Date(31, 10, 2016);
         Date d2 = new Date(01, 11, 2016);
-
+        Date d3 = new Date(11, 03, 2017);
+        
         //d1.compareTo(d2);
         
         //Actor Constructors
@@ -46,14 +47,14 @@ public class Tester {
         //Creates two different movie stock objects using overloaded constructors
         MovieStock m1 = new MovieStock("Iron Man", 120, "Science Fiction", actorList, 3.50, d1, "hd");
 
-        MovieStock m2 = new MovieStock("Colonia", actorList, "War", "sd");
+        MovieStock m2 = new MovieStock("Colonia", actorList, "War", d3, "sd");
         
         //Adds actors to both objects
         m1.addActor(a1);
         m1.addActor(a2);
-        m2.addActor(a2);
+        //m2.addActor(a2);
         
-       System.out.println("The Actor Details Are:" + m1.displayAllActorDetails());
+       //System.out.println("The Actor Details Are:" + m1.displayAllActorDetails());
         //m1.showAllActors();
         //System.out.println(" " + m1.toString());
        // System.out.println(" " + m2.toString());
@@ -62,24 +63,46 @@ public class Tester {
 
         //System.out.println(" " + g1.toString());
         
-        ArrayList<Stock> list1 = new ArrayList<Stock>();
-        Customers customer1 = new Customers("Hal Jordan", list1);
+        //Create an array list of stock objects and create a customer object
         
+        ArrayList<Stock> AvailableStock1 = new ArrayList<Stock>();
+        AvailableStock1.add(m1);
+        AvailableStock1.add(m2);
+        AvailableStock1.add(g1);
+        AvailableStock1.add(playlist);
+        
+        ArrayList<Stock> list1 = new ArrayList<Stock>();
+        Customers customer1 = new Customers("Hal Jordan", AvailableStock1, list1);
+        
+        //Add items of Stock That the customer is buying to the customer
         customer1.addPurchase(g1);
         customer1.addPurchase(m1);
-        //customer1.addPurchase(m2);
+        customer1.addPurchase(m2);
+        customer1.addPurchase(playlist);
         
-        customer1.displayAllDetails();
+        //Displays everything That the customer has purchased
+        customer1.displayDetailsOfPurchases();
+        
+        //Sorts What the customer has Purchased
         customer1.sortByName();
         customer1.sortStockByPrice();
+        customer1.sortAppsByReleaseDate();
         
-        
-        System.out.printf("The ammount of memory used to download %s is : %.2f GB\n\n" ,m1.getName(), m1.calcDownloadSize());
-        System.out.printf("The ammount of memory used to download %s is : %.2f GB\n\n",m2.getName() ,m2.calcDownloadSize());
-        System.out.printf("The ammount of memory used to download %s is : %.2f GB\n\n",g1.getName() ,g1.calcDownloadSize());
-        System.out.printf("The ammount of memory used to download %s is : %.2f MB\n\n",playlist.getName() ,playlist.calcDownloadSize());
+        //Prints out the calc download size for each item Purchased 
+        System.out.printf("The ammount of memory used to download %s is : %.2f GB\n\n"
+                    ,m1.getName(), m1.calcDownloadSize());
+        System.out.printf("The ammount of memory used to download %s is : %.2f GB\n\n"
+                    ,m2.getName() ,m2.calcDownloadSize());
+        System.out.printf("The ammount of memory used to download %s is : %.2f GB\n\n"
+                    ,g1.getName() ,g1.calcDownloadSize());
+        System.out.printf("The ammount of memory used to download %s is : %.2f MB\n\n"
+                    ,playlist.getName() ,playlist.calcDownloadSize());
 
-        
+        //Prints out the download size for each item purchased 
+        customer1.displayDownloadSize();
         customer1.searchForStock(m2);
+        
+        //System.out.println(m1.calcDownloadSize());
+
     }
 }

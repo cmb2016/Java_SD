@@ -103,9 +103,10 @@ public class MovieStockTest {
     public void testSetGenre() {
         System.out.println("setGenre");
         
+        Date d1 = new Date(31, 10, 2016);
         String genre = "Science Fiction";
         HashSet<Actor> actorList = new HashSet<>();
-        MovieStock instance = new MovieStock("Colonia", actorList, "War", "sd");
+        MovieStock instance = new MovieStock("Colonia", actorList, "War", d1, "sd");
         instance.setGenre(genre);
         
         String expResult = "Science Fiction";

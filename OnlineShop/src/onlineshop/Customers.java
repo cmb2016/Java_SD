@@ -13,12 +13,14 @@ public class Customers
 {
     private String name;
     private ArrayList<Stock> purchaseHistory;
+    private ArrayList<Stock> availableStock;
     private int numberOfPurchases;
     private float priceOfBasket;
     
-    public Customers(String name,ArrayList<Stock> list) 
+    public Customers(String name,ArrayList<Stock> available, ArrayList<Stock> list) 
     {
         this.name = name;
+        this.availableStock = available;
         this.purchaseHistory = list;
     }
 
@@ -38,20 +40,30 @@ public class Customers
         numberOfPurchases++;
     }
     
-    public void displayAllDetails()
+    public void displayDetailsOfPurchases()
     {
         for(Stock st1: purchaseHistory)
         {
-            System.out.println(st1);    
+            System.out.println(st1); //   
+            //Calls toString Method For each item of stock polymorfically at run time
+        }
+    }
+    
+    public void displayDownloadSize()
+    {
+        for(Stock st1: purchaseHistory)
+        {
+            System.out.println("The Download size of " + st1.getName()
+                    + " is: "+ st1.calcDownloadSize() +"GB"); //   
             //Calls toString Method For each item of stock polymorfically at run time
         }
     }
     
     public void sortStockByPrice()
     {
-        Collections.sort(purchaseHistory,new PriceComparator());
+        Collections.sort(availableStock,new PriceComparator());
       
-        Iterator itr = purchaseHistory.iterator();
+        Iterator itr = availableStock.iterator();
          
          while(itr.hasNext())
          {  
@@ -62,9 +74,9 @@ public class Customers
     
     public void sortByName()
     {
-        Collections.sort(purchaseHistory,new NameComparator());
+        Collections.sort(availableStock,new NameComparator());
       
-        Iterator itr = purchaseHistory.iterator();
+        Iterator itr = availableStock.iterator();
          
          while(itr.hasNext())
          {  
@@ -74,11 +86,24 @@ public class Customers
         
     }
     
+    public void sortAppsByReleaseDate()
+    {
+        Collections.sort(availableStock,new DateComparator());
+      
+        Iterator itr = availableStock.iterator();
+         
+         while(itr.hasNext())
+         {  
+            Stock st1 =(Stock)itr.next();
+            System.out.println(st1.getReleaseDate());
+         }  
+    }
+    
     public boolean searchForStock(Stock st1)
     {
-       for (Stock stock: purchaseHistory)
+       for (Stock stock: availableStock)
        {
-           if(purchaseHistory.contains(st1))
+           if(availableStock.contains(st1))
            {
                System.out.println("The stock called " +st1.getName()+ " was found");
                return true;

@@ -36,7 +36,7 @@ class Date implements Comparable <Date>{
        }
     }
     public Date(){
-    
+
     }
     
     //public member methods
