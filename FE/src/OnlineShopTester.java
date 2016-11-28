@@ -46,7 +46,7 @@ public class OnlineShopTester {
         playlist.addSong(song3);
         
         //creating MovieStock objects 
-        MovieStock m1 = new MovieStock("Iron Man", 120, "Science Fiction", actorList, 3.50, d1, 10, "hd");
+        MovieStock m1 = new MovieStock("Iron Man", 120, "SciFi", actorList, 3.50, d1, 10, "hd");
         MovieStock m2 = new MovieStock("The Holiday", 130, "Romance", actorList, 2.50, d2, 5, "sd");
         
         //adding actors to MovieStock objects
@@ -99,27 +99,28 @@ public class OnlineShopTester {
             do{
                 System.out.println("");
                 c1.sortByName();
-                System.out.print("If you want to purchase any of the stock press the corresponding number, i.e. 1, 2, 3, 4, 5 and 6 for QUIT: ");
+                System.out.print("\nIf you want to purchase any of the stock press the corresponding number, "
+                        + "\n\ti.e. 1 - 90's Playlist, 2 - Iron Man, 3 - The Holiday, 4 - Tomb Raider, 5 - Call of Duty, and 6 for QUIT: ");
                 int int2 = Integer.parseInt(u3.nextLine());
                 switch(int2){
                     case 1:
-                        c1.addPurchase(m1);
+                        c1.addPurchase(playlist);
                         System.out.println("\nYou have successfully purchased: " + c1.getPurchaseHistory());
                         break;
                     case 2:
-                        c1.addPurchase(m2);
+                        c1.addPurchase(m1);
                         System.out.println("\nYou have successfully purchased: " + c1.getPurchaseHistory());
                         break;
                     case 3:
-                        c1.addPurchase(g1);
+                        c1.addPurchase(m2);
                         System.out.println("\nYou have successfully purchased: " + c1.getPurchaseHistory());
                         break;
                     case 4:
-                        c1.addPurchase(g2);
+                        c1.addPurchase(g1);
                         System.out.println("\nYou have successfully purchased: " + c1.getPurchaseHistory());
                         break;
                     case 5:
-                        c1.addPurchase(playlist);
+                        c1.addPurchase(g2);
                         System.out.println("\nYou have successfully purchased: " + c1.getPurchaseHistory());
                         break;
                     default:
@@ -135,27 +136,28 @@ public class OnlineShopTester {
              do{
                 System.out.println("");
                 c1.sortByPrice();
-                System.out.println("\nIf you want to purchase any of the stock press the corresponding number, i.e. 1, 2, 3, 4, 5 and 6 for QUIT: ");
+                System.out.println("\nIf you want to purchase any of the stock press the corresponding number, "
+                        + "\n\ti.e. 1 - 90's Playlist, 2 - Iron Man, 3 - The Holiday, 4 - Tomb Raider, 5 - Call of Duty, and 6 for QUIT: ");
                 int int2 = Integer.parseInt(u3.nextLine());
                 switch(int2){
                     case 1:
-                        c1.addPurchase(m1);
+                        c1.addPurchase(playlist);
                         System.out.println("\nYou have successfully purchased: " + c1.getPurchaseHistory());
                         break;
                     case 2:
-                        c1.addPurchase(m2);
+                        c1.addPurchase(m1);
                         System.out.println("\nYou have successfully purchased: " + c1.getPurchaseHistory());
                         break;
                     case 3:
-                        c1.addPurchase(g1);
+                        c1.addPurchase(m2);
                         System.out.println("\nYou have successfully purchased: " + c1.getPurchaseHistory());
                         break;
                     case 4:
-                        c1.addPurchase(g2);
+                        c1.addPurchase(g1);
                         System.out.println("\nYou have successfully purchased: " + c1.getPurchaseHistory());
                         break;
                     case 5:
-                        c1.addPurchase(playlist);
+                        c1.addPurchase(g2);
                         System.out.println("\nYou have successfully purchased: " + c1.getPurchaseHistory());
                         break;
                     default:

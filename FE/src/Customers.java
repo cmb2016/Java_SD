@@ -76,7 +76,7 @@ public class Customers
          while(itr.hasNext())
          {  
             Stock st1 =(Stock)itr.next();  
-            System.out.println("€" + st1.getPrice() + "\t " + st1.getName() + "\t " + st1.getGenre());
+            System.out.println("€" + st1.getPrice() + "\t " + st1.getName() + "\t quantity " +st1.getQuantity());
          }  
     }
     
@@ -89,7 +89,7 @@ public class Customers
          while(itr.hasNext())
          {  
             Stock st1 =(Stock)itr.next();  
-            System.out.println(st1.getName());
+            System.out.println(st1.getName() + "\t €" + st1.getPrice() + "\t quantity " +st1.getQuantity());
          }  
         
     }
