@@ -42,7 +42,8 @@ public class Customers
     {
         for(Stock st1: purchaseHistory)
         {
-            System.out.println(st1);    //Calls toString Method For each item of stock polymorfically at run time
+            System.out.println(st1);    
+            //Calls toString Method For each item of stock polymorfically at run time
         }
     }
     
@@ -71,5 +72,19 @@ public class Customers
             System.out.println(st1.getName());
          }  
         
+    }
+    
+    public boolean searchForStock(Stock st1)
+    {
+       for (Stock stock: purchaseHistory)
+       {
+           if(purchaseHistory.contains(st1))
+           {
+               System.out.println("The stock called " +st1.getName()+ " was found");
+               return true;
+           }                 
+        }
+       System.out.println("No Item of Stock was found matching that name");       
+       return false;
     }
 }

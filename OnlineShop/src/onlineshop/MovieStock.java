@@ -49,6 +49,10 @@ public class MovieStock extends Stock{
         this.genre = genre;
     }
 
+    public HashSet<Actor> getActorList() {
+        return actorList;
+    }
+
     public void addActor(Actor a){
         actorList.add(a);
         nofActors++;
@@ -68,9 +72,24 @@ public class MovieStock extends Stock{
             System.out.println("There are no actors saved in the database");
         }else{
             for(Actor a: actorList) {
+                
                 System.out.println(a);
             }
         }
+    }
+    
+    public String displayAllActorDetails(){
+        
+        String result = "";
+        
+        if(actorList.isEmpty()){
+            System.out.println("There are no actors saved in the database");
+        }else{
+            for(Actor a: actorList) {
+                 result = result + a.toString();                
+            }
+        }
+        return result;
     }
     
     @Override
@@ -100,7 +119,7 @@ public class MovieStock extends Stock{
         return "MovieStock{" +
                 "runTimeMin=" + runTimeMin +
                 ", genre='" + genre + '\'' +
-                ", actorList=" + actorList +
+                //", actorList=" + actorList +
                 '}';
     }
 }
