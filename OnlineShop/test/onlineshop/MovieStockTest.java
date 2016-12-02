@@ -47,7 +47,7 @@ public class MovieStockTest {
         
         Date d1 = new Date(31, 10, 2016);
         HashSet<Actor> actorList = new HashSet<>();
-        MovieStock m1 = new MovieStock("Iron Man", 120, "Science Fiction", actorList, 3.50, d1, "hd");
+        MovieStock m1 = new MovieStock("Iron Man", 120, "Science Fiction", actorList, 3.50, d1, 2, "hd");
         
         MovieStock instance = m1;
         int expResult = 120;
@@ -67,50 +67,11 @@ public class MovieStockTest {
         
         Date d1 = new Date(31, 10, 2016);
         HashSet<Actor> actorList = new HashSet<>();
-        MovieStock instance = new MovieStock("Iron Man", 120, "Science Fiction", actorList, 3.50, d1, "hd");
+        MovieStock instance = new MovieStock("Iron Man", 120, "Science Fiction", actorList, 3.50, d1, 2, "hd");
         instance.setRunTimeMin(runTimeMin);
         
         int expResult = 110;
         int result = instance.getRunTimeMin();
-        assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        //fail("The test case is a prototype.");
-    }
-
-    /**
-     * Test of getGenre method, of class MovieStock.
-     */
-    @Test
-    public void testGetGenre() {
-        System.out.println("getGenre");
-        
-        Date d1 = new Date(31, 10, 2016);
-        HashSet<Actor> actorList = new HashSet<>();
-        MovieStock m1 = new MovieStock("Iron Man", 120, "Science Fiction", actorList, 3.50, d1, "hd");
-        
-        MovieStock instance = m1;
-        String expResult = "Science Fiction";
-        String result = instance.getGenre();
-        assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        //fail("The test case is a prototype.");
-    }
-
-    /**
-     * Test of setGenre method, of class MovieStock.
-     */
-    @Test
-    public void testSetGenre() {
-        System.out.println("setGenre");
-        
-        Date d1 = new Date(31, 10, 2016);
-        String genre = "Science Fiction";
-        HashSet<Actor> actorList = new HashSet<>();
-        MovieStock instance = new MovieStock("Colonia", actorList, "War", d1, "sd");
-        instance.setGenre(genre);
-        
-        String expResult = "Science Fiction";
-        String result = instance.getGenre();
         assertEquals(expResult, result);
         // TODO review the generated test code and remove the default call to fail.
         //fail("The test case is a prototype.");
@@ -126,7 +87,7 @@ public class MovieStockTest {
         Date d1 = new Date(31, 10, 2016);
         HashSet<Actor> actorList = new HashSet<>();
         Actor a1 = new Actor("Robert", "Downey Jr");
-        MovieStock m1 = new MovieStock("Iron Man", 120, "Science Fiction", actorList, 3.50, d1, "hd");
+        MovieStock m1 = new MovieStock("Iron Man", 120, "Science Fiction", actorList, 3.50, d1, 2, "hd");
         
         MovieStock instance = m1;
         instance.addActor(a1);
@@ -148,7 +109,7 @@ public class MovieStockTest {
         Date d1 = new Date(31, 10, 2016);
         HashSet<Actor> actorList = new HashSet<>();
         Actor a1 = new Actor("Robert", "Downey Jr");
-        MovieStock m1 = new MovieStock("Iron Man", 120, "Science Fiction", actorList, 3.50, d1, "hd");
+        MovieStock m1 = new MovieStock("Iron Man", 120, "Science Fiction", actorList, 3.50, d1, 2, "hd");
         
         
         MovieStock instance = m1;
@@ -174,7 +135,7 @@ public class MovieStockTest {
         HashSet<Actor> actorList = new HashSet<>();
         Actor a1 = new Actor("Robert", "Downey Jr");
         Actor a2 = new Actor("Emma", "Watson");
-        MovieStock instance = new MovieStock("Iron Man", 120, "Science Fiction", actorList, 3.50, d1, "hd");
+        MovieStock instance = new MovieStock("Iron Man", 120, "Science Fiction", actorList, 3.50, d1, 2, "hd");
         
         instance.addActor(a2);
         instance.addActor(a1);
@@ -197,7 +158,7 @@ public class MovieStockTest {
         Date d1 = new Date(31, 10, 2016);
         HashSet<Actor> actorList = new HashSet<>();
         Actor a1 = new Actor("Robert", "Downey Jr");
-        MovieStock m1 = new MovieStock("Iron Man", 120, "Science Fiction", actorList, 3.50, d1, "hd");
+        MovieStock m1 = new MovieStock("Iron Man", 120, "Science Fiction", actorList, 3.50, d1, 2, "hd");
         
         double expResult = .8 * 6;
         double result = m1.calcDownloadSize();
@@ -214,7 +175,7 @@ public class MovieStockTest {
         System.out.println("toString");
         Date d1 = new Date(31, 10, 2016);
         HashSet<Actor> actorList = new HashSet<>();
-        MovieStock m1 = new MovieStock("Iron Man", 120, "Science Fiction", actorList, 3.50, d1, "hd");
+        MovieStock m1 = new MovieStock("Iron Man", 120, "Science Fiction", actorList, 3.50, d1, 2, "hd");
         
         String expResult = "MovieStock{runTimeMin=120, genre='Science Fiction'}";
         String result = m1.toString();

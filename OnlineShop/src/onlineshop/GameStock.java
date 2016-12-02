@@ -6,7 +6,6 @@ package onlineshop;
 
 
 public class GameStock extends Stock {
-    private String genre;
     private String platform;
     private int ageRating;
     private double gameSize;
@@ -14,9 +13,8 @@ public class GameStock extends Stock {
     private int numExpansion = 0;
 
     //User-defined constructor
-    public GameStock(String name, String genre, String platform, int ageRating, double price, Date releaseDate, double size, int numExpansion){
-        super(name, price, releaseDate);
-        this.genre = genre;
+    public GameStock(String name, String genre, String platform, int ageRating, double price, Date releaseDate, double size, int numExpansion, int quantity){
+        super(name, price, releaseDate, quantity, genre);
         this.platform = platform;
         this.ageRating = ageRating;
         this.gameSize = size;
@@ -30,14 +28,6 @@ public class GameStock extends Stock {
 
     public void setAgeRating(int ageRating) {
         this.ageRating = ageRating;
-    }
-
-    public String getGenre() {
-        return genre;
-    }
-
-    public void setGenre(String genre) {
-        this.genre = genre;
     }
 
     public String getPlatform() {
@@ -62,10 +52,9 @@ public class GameStock extends Stock {
 
     @Override
     public String toString() {
-        return "GameStock{" +
-                "genre='" + genre + '\'' +
+        return "\nGameStock{" + super.getName() +
                 ", platform='" + platform + '\'' +
                 ", ageRating=" + ageRating +
-                '}';
+                "}\n";
     }
 }

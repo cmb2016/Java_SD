@@ -15,14 +15,21 @@ public class MusicStock extends Stock{
 
      
     //User-defined constructor
-    public MusicStock(String name, String artist, double duration, double price, Date releaseDate){
-        super(name, price, releaseDate);
+    public MusicStock(String name, String artist, double duration, double price, int quantity, String genre, Date releaseDate){
+        super(name, price, releaseDate, quantity, genre);
         //setArtist(artist);
         //setDuration(duration);
     }
     
-    public MusicStock(String name, double price, Date releaseDate, ArrayList<Songs> songs){
-        super(name, price, releaseDate);
+    public MusicStock(String name, double price, Date releaseDate, int quantity, String genre, ArrayList<Songs> songs){
+        super(name, price, releaseDate, quantity, genre);
+        this.songs = songs;
+        //setArtist(artist);
+        //setDuration(duration);
+    }
+    
+    public MusicStock(String name, double price, Date releaseDate, ArrayList<Songs> songs, int quantity){
+        super(name, price, releaseDate, quantity);
         this.songs = songs;
         //setArtist(artist);
         //setDuration(duration);
@@ -49,4 +56,11 @@ public class MusicStock extends Stock{
     {
         return totalSongStorage;
     }
+
+    @Override
+    public String toString() {
+        return "\nMusicStock{" + super.getName() + " songs=" + songs + "}\n";
+    }
+    
+    
 }

@@ -11,11 +11,11 @@ package onlineshop;
  */
 public class Songs {
     
-    double duration;
-    String title;
-    String genre;
-    String artist;
-    int songSize = 128;
+    private double duration;
+    private String title;
+    private String genre;
+    private String artist;
+    private int songSize = 128;
     
     public Songs(String title, double duration, String genre)
     {

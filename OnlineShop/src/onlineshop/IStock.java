@@ -22,7 +22,7 @@ public interface IStock {
 
     void setName(String name);
 
-    void setPrice(int price);
+    void setPrice(double price);
 
     void setQuantity(int quantity);
 

@@ -10,12 +10,15 @@ public abstract class Stock implements IStock {
     private double price;
     private Date releaseDate;
     private int quantity;
+    private String genre;
 
     //User-defined constructor
-    public Stock(String name, double price, Date releaseDate){
+    public Stock(String name, double price, Date releaseDate, int quantity, String genre ){
         this.name = name;
         this.price = price;
         this.releaseDate = releaseDate;
+        this.quantity = quantity;
+        this.genre = genre;
     }
 
     //overloaded constructor
@@ -24,9 +27,17 @@ public abstract class Stock implements IStock {
     }
 
     //overloaded constructor
-    public Stock(String name, Date date){
+    public Stock(String name, Date date, String genre){
         this.name = name;
         this.releaseDate = date;
+        this.genre = genre;
+    }
+    
+    public Stock(String name, double price, Date releaseDate, int quantity){
+        setName(name);
+        setPrice(price);
+        setReleaseDate(releaseDate);
+        setQuantity(quantity);
     }
 
     //Setters & Getters
@@ -46,7 +57,7 @@ public abstract class Stock implements IStock {
     }
 
     @Override
-    public void setPrice(int price) {
+    public void setPrice(double price) {
         this.price = price;
     }
 
@@ -69,6 +80,8 @@ public abstract class Stock implements IStock {
     public void setQuantity(int quantity) {
         this.quantity = quantity;
     }
+    
+    
 
     public abstract double calcDownloadSize();
     

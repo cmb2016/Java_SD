@@ -10,7 +10,6 @@ import java.util.HashSet;
 public class MovieStock extends Stock{
 
     private int runTimeMin;
-    private String genre;
     private HashSet<Actor> actorList;
     private static int nofActors;
     private double fileSize = .8;
@@ -18,18 +17,16 @@ public class MovieStock extends Stock{
     private final static int sd = 1;
     private String format;
 
-    public MovieStock(String name, int runTimeMin, String genre, HashSet<Actor> aList, double price, Date releaseDate, String format){
-        super(name, price, releaseDate);
+    public MovieStock(String name, int runTimeMin, String genre, HashSet<Actor> aList, double price, Date releaseDate, int quantity, String format){
+        super(name, price, releaseDate, quantity, genre);
         this.actorList = aList;
         setRunTimeMin(runTimeMin);
-        setGenre(genre);
         this.format = format;
     }
 
     public MovieStock(String name, HashSet<Actor> aList, String genre, Date releaseDate, String format){
-        super(name, releaseDate);
+        super(name, releaseDate, genre);
         this.actorList = aList;
-        setGenre(genre);
         this.format = format;
     }
 
@@ -41,13 +38,6 @@ public class MovieStock extends Stock{
         this.runTimeMin = runTimeMin;
     }
 
-    public String getGenre() {
-        return genre;
-    }
-
-    public void setGenre(String genre) {
-        this.genre = genre;
-    }
 
     public HashSet<Actor> getActorList() {
         return actorList;
@@ -116,10 +106,10 @@ public class MovieStock extends Stock{
 
     @Override
     public String toString() {
-        return "MovieStock{" +
-                "runTimeMin=" + runTimeMin +
-                ", genre='" + genre + '\'' +
-                //", actorList=" + actorList +
-                '}';
+        return "\nMovieStock{" +
+                "Name= " + super.getName() +
+                ", runTimeMin=" + runTimeMin +               
+                ", actorList=" + actorList +
+                "}\n";
     }
 }
